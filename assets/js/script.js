@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <a href="about.html" class="nav-link">Sobre</a>
                     <a href="education.html" class="nav-link">Formação</a>
                     <a href="contact.html" class="nav-link">Contato</a>
-                    <a href="https://alexcesar.dev" target="_blank">Portfólio</a>
+                    <a href="https://portfolio-thealexcesar.vercel.app" target="_blank">Portfólio</a>
                 </nav>
             </div>
         </header>
