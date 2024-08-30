@@ -1,5 +1,5 @@
 window.onload = function () {
-    emailjs.init(CONFIG.PUBLIC_KEY)
+    emailjs.init(process.env.PUBLIC_KEY)
 
     const emailInput = document.querySelector('input[name="user_email"]')
     const nameInput = document.querySelector('input[name="user_name"]')
@@ -36,7 +36,7 @@ window.onload = function () {
 
     document.getElementById('contact-form').addEventListener('submit', function (event) {
         event.preventDefault()
-        emailjs.sendForm(CONFIG.SERVICE_ID, CONFIG.TEMPLATE_ID, this)
+        emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, this)
             .then(() => {
                 console.log('SUCESSO!')
                 alert('Mensagem enviada com sucesso!')
