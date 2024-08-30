@@ -1,12 +1,12 @@
 
-/*
-* headerHTML carrega o header diretamente pelo JavaScript
-* footerHTML carrega o footer diretamente pelo JavaScript
-* afterbegin insere o header no início do body
-* veforebegin insere o footer no final do body
-* setActive() define a classe 'active' no link de navegação ativo
-* @autor: alex cesar
-* */
+/**
+ * const: headerHTML carrega o header diretamente pelo JavaScript.
+ * const: footerHTML carrega o footer diretamente pelo JavaScript.
+ * @args: 'afterbegin' insere o header no início do body.
+ * @args: veforebegin insere o footer no final do body.
+ * function: setActive() faz o toggle da class 'active' no link de navegação ativo.
+ * @autor: alex cesar
+ **/
 document.addEventListener('DOMContentLoaded', function () {
     const headerHTML = `
         <header>
@@ -21,18 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </header>
     `
-    const footerHTML = `<footer style="justify-content: center">&copy; 2024 Alex Cesar da Silva</footer>`
+    const footerHTML = `<footer style="justify-content: center">&copy; 2024 Alex Cesar</footer>`
     document.body.insertAdjacentHTML('afterbegin', headerHTML)
     document.body.insertAdjacentHTML('beforeend', footerHTML)
     setActiveNavLink()
 })
 
 function setActiveNavLink() {
-    const navLinks = document.querySelectorAll('nav a')
-    const currentPath = window.location.pathname
-
-    navLinks.forEach(link => {
-        link.getAttribute('href') === currentPath.split('/').pop()
-            ? link.classList.add('active') : link.classList.remove('active')
-    })
+    document.querySelectorAll('nav a').forEach(link => {
+        const currentPath = window.location.pathname.split('/').pop()
+        link.getAttribute('href') === currentPath ? link.classList.add('active') : link.classList.remove('active')
+    });
 }
